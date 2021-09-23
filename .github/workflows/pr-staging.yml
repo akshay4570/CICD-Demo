@@ -61,7 +61,7 @@ jobs:
     - uses: actions/checkout@v2
  
     - name: Merge QA_Release1 --> Staging_Release1
-      uses: devmasx/merge-branch@v1.4.0
+      uses: everlytic/branch-merge@1.1.2
       with:
         from_branch: QA_Release1
         target_branch: staging_Release1
