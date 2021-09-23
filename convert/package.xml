@@ -4,5 +4,10 @@
         <members>accountCreator</members>
         <name>LightningComponentBundle</name>
     </types>
+    <types>
+        <members>pr-QA.yml</members>
+        <members>pr-staging.yml</members>
+        <name>Workflow</name>
+    </types>
     <version>52.0</version>
 </Package>
