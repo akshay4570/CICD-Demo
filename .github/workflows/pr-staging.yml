@@ -51,16 +51,10 @@ jobs:
         name: static-code-analysis-report
         path: results.csv
     - name: 'Convert Metadata'
-      run: sfdx force:source:convert --manifest=package/package.xml --outputdir=convert
+      run: sfdx force:source:convert --rootdir=force-app --outputdir=convert
     - name: 'Run Test on Metadata'
       run: sfdx force:mdapi:deploy --deploydir=convert -u hub-org
-
-  merge-branch:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
- 
-    - name: Merge QA_Release1 --> Staging_Release1
+    - name: Merge Branch QA_Release1 --> Staging_Release1
       uses: everlytic/branch-merge@1.1.2
       with:
         from_branch: QA_Release1
